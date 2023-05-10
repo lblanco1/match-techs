@@ -1,17 +1,17 @@
 .container {
     background: conic-gradient(
         from 0deg at 50% 44%,
-        #fa0b8c -109.49deg,
-        rgba(145, 0, 181, 0.956502) 81.97deg,
-        rgba(11, 7, 67, 39.95) 94.55deg,
-        rgba(4, 16, 78, 0.955434) 263deg,
-        #fa0b8c 280.51deg,
-        rgba(145, 0, 181, 0.956502) 392.97deg
+        #fa0b8c -175.49deg,
+        rgba(145, 0, 181, 0.956502) 84.97deg,
+        rgba(11, 7, 67, 39.95) 96.55deg,
+        rgba(4, 16, 78, 0.955434) 261deg,
+        #fa0b8c 276.51deg,
+        rgba(145, 0, 181, 0.956502) 393.97deg
     );
 
     font-family: "KoHo", sans-serif;
     font-weight: 700;
-    font-size: 30px;
+    font-size: 22px;
     line-height: 39px;
 
     width: 100%;
@@ -41,16 +41,30 @@
     position: absolute; /* posicionar de forma absoluta */
     left: 50%; /* centralizar horizontalmente */
     transform: translateX(-50%); /* ajustar posicionamento no centro */
-
+    margin-top: 0.2rem;
     flex-basis: 100%;
 }
 
+img {
+    width: 8rem;
+    height: 7rem;
+}
+
 @media screen and (max-width: 700px) {
-    .content {
+    .container {
+        font-size: 20px;
+    }
+
+    /* .content {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-    }
+    } */
+
+    /* Esconde o h1 quando a tela for menor que 700px */
+    /* .content h1.hide {
+        display: none;
+    } */
 
     .content h1,
     .content h2 {
