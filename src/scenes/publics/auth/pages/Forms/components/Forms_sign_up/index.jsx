@@ -79,7 +79,7 @@ export default function Forms() {
                <img src={Cellphone} alt="Cellphone" className={styles.img}/>
             </div>
 
-            <button>Continuar</button>
+            <button type="submit">Continuar</button>
             <h2 className={styles.form_accout}>Já possuo conta</h2>
          </form>
 
