@@ -14,7 +14,7 @@
 }
 
 .content {
-    margin: 10px 0;
+    margin: 20px 0;
     margin-bottom: 3rem;
 }
 
@@ -53,8 +53,6 @@ input {
 .form_subtitle {
     text-align: center;
     font-size: 23px;
-    margin-top: 0;
-    margin-bottom: 20px;
     color: #ffffff;
     font-family: "KoHo", sans-serif;
 }

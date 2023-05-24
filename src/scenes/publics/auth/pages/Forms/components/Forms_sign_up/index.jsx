@@ -5,6 +5,7 @@ import InputMask from 'react-input-mask';
 import User from "../../../../../../../assets/img/User.svg"
 import Email from "../../../../../../../assets/img/Email.svg"
 import Cellphone from "../../../../../../../assets/img/Cellphone.svg"
+import { Link } from 'react-router-dom';
 
 export default function Forms() {
    const { control, handleSubmit } = useForm();
@@ -78,8 +79,9 @@ export default function Forms() {
                />
                <img src={Cellphone} alt="Cellphone" className={styles.img}/>
             </div>
-
-            <button type="submit">Continuar</button>
+            <Link to="/password">
+               <button type="submit">Continuar</button>
+            </Link>
             <h2 className={styles.form_accout}>Já possuo conta</h2>
          </form>
 
