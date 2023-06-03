@@ -47,41 +47,45 @@ export default function Forms() {
 
             <div className={styles.content}>
                <label>Nome<span className={styles.required_symbol}></span></label>
-               <input 
+               <input
                   type="text"
                   placeholder="Digite seu nome completo"
                   {...nameField}
                   required
                   ref={nameRef}
                />
-               <img src={User} alt="User" className={styles.img}/>
+               <img src={User} alt="User" className={styles.img} />
             </div>
 
             <div className={styles.content}>
                <label>Seu melhor E-mail<span className={styles.required_symbol}></span></label>
-               <input 
-                  type="email" 
+               <input
+                  type="email"
                   placeholder="Email@exemplo.com"
                   {...emailField}
                   ref={emailRef}
                   required
                />
-               <img src={Email} alt="Email" className={styles.img}/>
+               <img src={Email} alt="Email" className={styles.img} />
             </div>
 
             <div className={styles.content}>
                <label>Celular<span className={styles.required_symbol}></span></label>
-               <InputMask 
-                  mask="(99) 99999-9999" 
+               <InputMask
+
+                  placeholder='(xx) xxxxx-xxxx'
+                  mask="(99) 99999-9999"
                   {...field}
                   pattern="(\([0-9]{2}\)\s?|[0-9]{2}\s?)[9]?[0-9]{4}-?[0-9]{4}"
                   ref={telefoneRef}
                />
-               <img src={Cellphone} alt="Cellphone" className={styles.img}/>
+               <img src={Cellphone} alt="Cellphone" className={styles.img} />
             </div>
-            <Link to="/password">
-               <button type="submit">Continuar</button>
-            </Link>
+            <div className={styles.custom_button}>
+               <Link to="/password">
+                  <button type="submit">Continuar</button>
+               </Link>
+            </div>
             <h2 className={styles.form_accout}>Já possuo conta</h2>
          </form>
 

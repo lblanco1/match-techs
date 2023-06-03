@@ -42,18 +42,16 @@ input {
     outline: none;
 }
 
+input::placeholder { 
+    font-size: 23px;
+    font-family: "KoHo", sans-serif;
+}
+
 .form_title {
     text-align: start;
     font-size: 40px;
     margin-top: 0;
     margin-bottom: 35px;
-    color: #ffffff;
-    font-family: "KoHo", sans-serif;
-}
-
-.form_subtitle {
-    text-align: center;
-    font-size: 23px;
     color: #ffffff;
     font-family: "KoHo", sans-serif;
 }
@@ -86,14 +84,17 @@ button {
     cursor: pointer;
 }
 
-input::placeholder { 
-    font-size: 23px;
-    font-family: "KoHo", sans-serif;
+.group_password {
+    font-size: 16px;
+    color: #3A85DE;
+    display: flex;
+    justify-content: right;
 }
 
 .img {
-    margin-top: -60px;
-    width: 25px;
+    margin-top: -24px;
+    width: 20px;
+    height: 20px;
     display: flex;
     float: right;
 }
@@ -105,4 +106,4 @@ input::placeholder {
     position: relative;
     top: -7px;
     margin-left: 9px;
-  }
+}
