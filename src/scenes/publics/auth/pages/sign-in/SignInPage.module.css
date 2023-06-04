@@ -6,27 +6,28 @@
 }
 
 .form {
-    width: 40%;
-    padding: 20px;
+    width: 35%;
+    /* padding: 20px; */
     background: #0d0946;
     border-radius: 30px;
     padding: 75px;
 }
 
 .content {
-    margin: 20px 0;
+     margin: 0; 
     margin-bottom: 3rem;
 }
 
-label {
-    display: block;
+h3 {
+    /* display: block;
     margin-bottom: 5px;
     font-style: normal;
     font-weight: 700;
-    font-size: 24px;
     line-height: 34px;
-    color: #ffffff;
-    font-family: "KoHo", sans-serif;
+    color: #ffffff;*/
+    font-family: "KoHo", sans-serif; 
+    font-size: 20px;
+    color: #3A85DE;
 }
 
 input {
@@ -49,11 +50,12 @@ input::placeholder {
 
 .form_title {
     text-align: start;
-    font-size: 40px;
+    font-size: 48px;
     margin-top: 0;
     margin-bottom: 35px;
     color: #ffffff;
     font-family: "KoHo", sans-serif;
+    text-align: center;
 }
 
 button {
@@ -61,7 +63,7 @@ button {
     line-height: 32px;
     background: #5a0272;
     border-radius: 15px;
-    font-size: 20px;
+    font-size: 25px;
     color: #ffffff;
     cursor: pointer;
     width: 150px;
@@ -73,28 +75,31 @@ button {
     justify-content: center;
 }
 
-.form_accout {
-    color: #3A85DE;
-    display: grid;
-    place-items: center;
-    margin-top: 4rem;
-    font-size: 23px;
+.conteiner {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 4rem;
+    margin-inline: 7rem;
+}
+
+.form_question {
+    color: white;
     font-family: "KoHo", sans-serif;
-    font-weight: 700;
+    font-size: 26px;
+}
+
+.form_start {
+    color: #3A85DE;
+    font-size: 26px;
+    font-family: "KoHo", sans-serif;
     cursor: pointer;
 }
 
-.group_password {
-    font-size: 16px;
-    color: #3A85DE;
-    display: flex;
-    justify-content: right;
-}
 
 .img {
     margin-top: -24px;
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 20.86px;
     display: flex;
     float: right;
 }

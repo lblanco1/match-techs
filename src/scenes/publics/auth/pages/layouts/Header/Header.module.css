@@ -21,6 +21,10 @@
     position: relative; /* posicionar de forma relativa */
 }
 
+.matchtechs {
+    display: flex;
+    margin-top: 45px;
+}
 .content {
     color: #ffffff;
     display: flex;
@@ -41,6 +45,7 @@
     transform: translateX(-50%); /* ajustar posicionamento no centro */
     margin-top: 0.2rem;
     flex-basis: 100%;
+    font-size: 30px;
 }
 
 img {

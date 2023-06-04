@@ -3,7 +3,7 @@ import styles from "./SignInPage.module.css"
 import { useForm, useController } from 'react-hook-form';
 import { Link } from 'react-router-dom';
 import Lock from "../../../../../../src/assets/img/Lock.png"
-import User from "../../../../../../src/assets/img/User.svg"
+import Email from "../../../../../../src/assets/img/Email.svg"
 
 export default function SignInPage() {
     const { control, handleSubmit } = useForm();
@@ -44,14 +44,23 @@ export default function SignInPage() {
                         required
                         ref={emailField}
                     />
-                    <img src={User} alt="User" className={styles.img} />
+
+
+                    <img src={Email} alt="Email" className={styles.img} />
                 </div>
 
-                <div className={styles.content}>
-                    <div className={styles.group_password}>
-                        <label>Esqueceu sua senha?</label>
-                        <label>Senha<span className={styles.required_symbol}></span></label>
+
+                    <div>
+                     
                     </div>
+
+                     
+
+                     <div className={styles.content}>
+                    
+                    <label>Senha<span className={styles.required_symbol}></span></label>
+                    <h3 style={{ fontSize: '20px', color: '#3A85DE', display: 'flex', justifyContent: 'flex-end' , }}>Esqueceu sua senha?</h3>
+
                     <div className={styles.content}>
                         <input
                             type="password"
@@ -62,16 +71,28 @@ export default function SignInPage() {
                         />
                         {/* <img src={showPassword ? Eye : Nosee} className={styles.img} onClick={togglePasswordVisibility} /> */}
                         {/* <img src={Nosee} alt="Nosee" className={styles.img} onClick={passwordVisibility} /> */}
-                        <img src={Lock} alt="User" className={styles.img} />
+                        <img src={Lock} alt="Lock" className={styles.img} />
                     </div>
                 </div>
+
+
                 <div className={styles.custom_button}>
                     <Link to="/password">
                         <button type="submit">Entrar</button>
                     </Link>
+            
                 </div>
-                <h2 className={styles.form_accout}>Já possuo conta</h2>
+
+
+                <div className={styles.conteiner}>
+
+                <div className={styles.form_question}>Não tem cadastro?</div>
+                <div className={styles.form_start}>Comece por aqui</div>
+                
+                </div>
+
+           
             </form>
-        </div>
+                </div>
     );
 }
