@@ -46,20 +46,22 @@ export default function SignInPage() {
                     />
 
 
-                    <img src={Email} alt="Email" className={styles.img} />
+                        <img src={Email} alt="Email" className={styles.img} />
+               
                 </div>
 
                       
 
                      <div className={styles.flex}> 
                         
-                    
-                    <label>Senha<span className={styles.required_symbol}></span></label>
-                    <h3>Esqueceu sua senha?</h3>
+                     <label> Senha<span className={styles.required_symbol}></span></label>
+                     <h3>Esqueceu sua senha?</h3>
                    
                     </div>
 
+
                     <div className={styles.content}>
+                        
                         <input
                             type="password"
                             placeholder='Insira aqui a sua senha'
@@ -69,11 +71,14 @@ export default function SignInPage() {
                         />
                         {/* <img src={showPassword ? Eye : Nosee} className={styles.img} onClick={togglePasswordVisibility} /> */}
                         {/* <img src={Nosee} alt="Nosee" className={styles.img} onClick={passwordVisibility} /> */}
+                       
                         <img src={Lock} alt="Lock" className={styles.img} />
+                    
                     </div>
 
 
                 <div className={styles.custom_button}>
+                    
                     <Link to="/password">
                         <button type="submit">Entrar</button>
                     </Link>
@@ -84,6 +89,7 @@ export default function SignInPage() {
                 <div className={styles.conteiner}>
 
                 <div className={styles.form_question}>Não tem cadastro?</div>
+                
                 <div className={styles.form_start}>Comece por aqui</div>
                 
                 </div>

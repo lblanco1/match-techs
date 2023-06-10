@@ -16,28 +16,19 @@
 .content {
      margin: 0; 
     margin-bottom: 3rem;
-
 }
 
 .flex {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
 }
 
 h3 {
-    /* display: block;
-    margin-bottom: 5px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 34px;
-    color: #ffffff;*/
     font-family: "KoHo", sans-serif;
     font-size: 20px;
     color: #3A85DE;
     cursor: pointer;
-    
 }
 
 input {
