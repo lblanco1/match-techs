@@ -49,17 +49,15 @@ export default function SignInPage() {
                     <img src={Email} alt="Email" className={styles.img} />
                 </div>
 
+                      
 
-                    <div>
-                     
-                    </div>
-
-                     
-
-                     <div className={styles.content}>
+                     <div className={styles.flex}> 
+                        
                     
                     <label>Senha<span className={styles.required_symbol}></span></label>
-                    <h3 style={{ fontSize: '20px', color: '#3A85DE', display: 'flex', justifyContent: 'flex-end' , }}>Esqueceu sua senha?</h3>
+                    <h3>Esqueceu sua senha?</h3>
+                   
+                    </div>
 
                     <div className={styles.content}>
                         <input
@@ -73,7 +71,6 @@ export default function SignInPage() {
                         {/* <img src={Nosee} alt="Nosee" className={styles.img} onClick={passwordVisibility} /> */}
                         <img src={Lock} alt="Lock" className={styles.img} />
                     </div>
-                </div>
 
 
                 <div className={styles.custom_button}>

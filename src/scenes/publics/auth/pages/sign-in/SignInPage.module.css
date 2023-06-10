@@ -16,6 +16,14 @@
 .content {
      margin: 0; 
     margin-bottom: 3rem;
+
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
 }
 
 h3 {
@@ -25,9 +33,11 @@ h3 {
     font-weight: 700;
     line-height: 34px;
     color: #ffffff;*/
-    font-family: "KoHo", sans-serif; 
+    font-family: "KoHo", sans-serif;
     font-size: 20px;
     color: #3A85DE;
+    cursor: pointer;
+    
 }
 
 input {
@@ -66,7 +76,8 @@ button {
     font-size: 25px;
     color: #ffffff;
     cursor: pointer;
-    width: 150px;
+    width: 104px;
+    height: 44px;
 }
 
 .custom_button {
