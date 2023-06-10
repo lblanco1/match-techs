@@ -6,27 +6,29 @@
 }
 
 .form {
-    width: 40%;
-    padding: 20px;
+    width: 35%;
+    /* padding: 20px; */
     background: #0d0946;
     border-radius: 30px;
     padding: 75px;
 }
 
 .content {
-    margin: 20px 0;
+    margin: 0;
     margin-bottom: 3rem;
 }
 
-label {
-    display: block;
-    margin-bottom: 5px;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 34px;
-    color: #ffffff;
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+h3 {
     font-family: "KoHo", sans-serif;
+    font-size: 20px;
+    color: #3a85de;
+    cursor: pointer;
 }
 
 input {
@@ -35,27 +37,27 @@ input {
     width: 100%;
     color: #ffffff;
     border: none;
-    border-bottom: 1px solid #FA0B8C;
+    border-bottom: 1px solid #fa0b8c;
     background-color: transparent;
     padding: 0;
     margin: 0;
     outline: none;
 }
 
+input::placeholder {
+    font-size: 23px;
+    font-family: "KoHo", sans-serif;
+}
+
 .form_title {
+    margin-bottom: 50px;
     text-align: start;
-    font-size: 40px;
+    font-size: 48px;
     margin-top: 0;
     margin-bottom: 35px;
     color: #ffffff;
     font-family: "KoHo", sans-serif;
-}
-
-.form_subtitle {
     text-align: center;
-    font-size: 23px;
-    color: #ffffff;
-    font-family: "KoHo", sans-serif;
 }
 
 button {
@@ -63,10 +65,11 @@ button {
     line-height: 32px;
     background: #5a0272;
     border-radius: 15px;
-    font-size: 20px;
+    font-size: 25px;
     color: #ffffff;
     cursor: pointer;
-    width: 150px;
+    width: 104px;
+    height: 44px;
     transition-duration: 1s;
 }
 
@@ -80,26 +83,32 @@ button {
     justify-content: center;
 }
 
-.form_accout {
-    color: #3A85DE;
-    display: grid;
-    place-items: center;
-    margin-top: 4rem;
-    font-size: 23px;
+.conteiner {
+    white-space: nowrap;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 3rem;
+}
+
+.form_question {
+    color: white;
     font-family: "KoHo", sans-serif;
-    font-weight: 700;
+    font-size: 26px;
+}
+
+.form_start {
+    margin-left: 1rem;
+    color: #3a85de;
+    font-size: 26px;
+    font-family: "KoHo", sans-serif;
     cursor: pointer;
     text-decoration: none;
 }
 
-input::placeholder { 
-    font-size: 23px;
-    font-family: "KoHo", sans-serif;
-}
-
 .img {
-    margin-top: -60px;
+    margin-top: -24px;
     width: 25px;
+    height: 20.86px;
     display: flex;
     float: right;
 }
@@ -111,4 +120,4 @@ input::placeholder {
     position: relative;
     top: -7px;
     margin-left: 9px;
-  }
+}
