@@ -1,22 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from "./SignInPage.module.css"
 import { useForm, useController } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import Lock from "../../../../../../src/assets/img/Lock.png"
 import Email from "../../../../../../src/assets/img/Email.svg"
 
 export default function SignInPage() {
     const { control, handleSubmit } = useForm();
+    const navigate = useNavigate();
 
-    const emailField = React.useRef(null);
-    const password = React.useRef(null);
+    const [emailValid, setEmailValid] = useState(false);
+    const [passwordValid, setPasswordValid] = useState(false);
+
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i;
 
     const { field: email } = useController({
         name: 'email',
         control,
         rules: {
             required: true,
-            pattern: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i,
+            pattern: emailPattern,
         },
     });
 
@@ -28,74 +31,67 @@ export default function SignInPage() {
 
     const onSubmit = (data) => {
         console.log(data);
+        navigate('/manutencao'); // Navegar para a página desejada após a submissão do formulário
+    };
+
+    const handleEmailChange = (e) => {
+        setEmailValid(emailPattern.test(e.target.value));
+        email.onChange(e);
+    };
+
+    const handlePasswordChange = (e) => {
+        setPasswordValid(e.target.value.length > 0);
+        senha.onChange(e);
     };
 
     return (
         <div className={styles.container}>
-            <form onSubmit={handleSubmit(onSubmit)} className={styles.form} >
+            <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
                 <h1 className={styles.form_title}>LOGIN DO CLIENTE</h1>
 
                 <div className={styles.content}>
                     <label>Digite seu usuário<span className={styles.required_symbol}></span></label>
                     <input
                         type="email"
-                        placeholder="Ex: email@email.com"
+                        placeholder="Ex: email@example.com"
                         {...email}
-                        required
-                        ref={emailField}
+                        onChange={handleEmailChange}
                     />
-
-
-                        <img src={Email} alt="Email" className={styles.img} />
-               
+                    <img src={Email} alt="Email" className={styles.img} />
                 </div>
 
-                      
+                <div className={styles.flex}>
+                    <label> Senha<span className={styles.required_symbol}></span></label>
+                    <h3>Esqueceu sua senha?</h3>
+                </div>
 
-                     <div className={styles.flex}> 
-                        
-                     <label> Senha<span className={styles.required_symbol}></span></label>
-                     <h3>Esqueceu sua senha?</h3>
-                   
-                    </div>
-
-
-                    <div className={styles.content}>
-                        
-                        <input
-                            type="password"
-                            placeholder='Insira aqui a sua senha'
-                            {...senha}
-                            required
-                            ref={password}
-                        />
-                        {/* <img src={showPassword ? Eye : Nosee} className={styles.img} onClick={togglePasswordVisibility} /> */}
-                        {/* <img src={Nosee} alt="Nosee" className={styles.img} onClick={passwordVisibility} /> */}
-                       
-                        <img src={Lock} alt="Lock" className={styles.img} />
-                    
-                    </div>
-
+                <div className={styles.content}>
+                    <input
+                        type="password"
+                        placeholder='Insira aqui a sua senha'
+                        {...senha}
+                        onChange={handlePasswordChange}
+                    />
+                    <img src={Lock} alt="Lock" className={styles.img} />
+                </div>
 
                 <div className={styles.custom_button}>
-                    
-                    <Link to="/password">
-                        <button type="submit">Entrar</button>
-                    </Link>
-            
+                    <button
+                        className={styles.custom_button_submit}
+                        type="submit"
+                        disabled={!emailValid || !passwordValid}
+                    >
+                        Entrar
+                    </button>
                 </div>
-
 
                 <div className={styles.conteiner}>
-
-                <div className={styles.form_question}>Não tem cadastro?</div>
-                
-                <div className={styles.form_start}>Comece por aqui</div>
-                
+                    <div className={styles.form_question}>Não tem cadastro?</div>
+                    <Link className={styles.form_start} to="/cadastro">
+                        Comece por aqui
+                    </Link>
                 </div>
-
-           
             </form>
-                </div>
+        </div>
     );
 }

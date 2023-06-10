@@ -14,7 +14,7 @@
 }
 
 .content {
-     margin: 0; 
+    margin: 0;
     margin-bottom: 3rem;
 }
 
@@ -27,7 +27,7 @@
 h3 {
     font-family: "KoHo", sans-serif;
     font-size: 20px;
-    color: #3A85DE;
+    color: #3a85de;
     cursor: pointer;
 }
 
@@ -37,19 +37,20 @@ input {
     width: 100%;
     color: #ffffff;
     border: none;
-    border-bottom: 1px solid #FA0B8C;
+    border-bottom: 1px solid #fa0b8c;
     background-color: transparent;
     padding: 0;
     margin: 0;
     outline: none;
 }
 
-input::placeholder { 
+input::placeholder {
     font-size: 23px;
     font-family: "KoHo", sans-serif;
 }
 
 .form_title {
+    margin-bottom: 50px;
     text-align: start;
     font-size: 48px;
     margin-top: 0;
@@ -69,6 +70,11 @@ button {
     cursor: pointer;
     width: 104px;
     height: 44px;
+    transition-duration: 1s;
+}
+
+.custom_button_submit:hover {
+    background-color: #a439c2;
 }
 
 .custom_button {
@@ -78,10 +84,10 @@ button {
 }
 
 .conteiner {
+    white-space: nowrap;
     display: flex;
     justify-content: space-evenly;
-    padding: 4rem;
-    margin-inline: 7rem;
+    padding: 3rem;
 }
 
 .form_question {
@@ -91,12 +97,13 @@ button {
 }
 
 .form_start {
-    color: #3A85DE;
+    margin-left: 1rem;
+    color: #3a85de;
     font-size: 26px;
     font-family: "KoHo", sans-serif;
     cursor: pointer;
+    text-decoration: none;
 }
-
 
 .img {
     margin-top: -24px;

@@ -61,12 +61,12 @@ export default function FormsPassword() {
             <div className={styles.conteiner}>
                <div>
                   <Link to="/cadastro">
-                     <button type="button">Voltar</button>
+                     <button className={styles.custom_button_submit} type="button">Voltar</button>
                   </Link>
                </div>
 
                <div>
-                  <button type="submit">Concluir</button>
+                  <button className={styles.custom_button_submit} type="submit">Concluir</button>
                </div>
             </div>
             <h2 className={styles.form_accout}>Já possuo conta</h2>

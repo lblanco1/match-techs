@@ -67,6 +67,11 @@ button {
     color: #ffffff;
     cursor: pointer;
     width: 150px;
+    transition-duration: 1s;
+}
+
+.custom_button_submit:hover {
+    background-color: #a439c2;
 }
 
 .custom_button {
@@ -84,6 +89,7 @@ button {
     font-family: "KoHo", sans-serif;
     font-weight: 700;
     cursor: pointer;
+    text-decoration: none;
 }
 
 input::placeholder { 

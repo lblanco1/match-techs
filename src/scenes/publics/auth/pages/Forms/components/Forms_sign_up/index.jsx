@@ -83,12 +83,13 @@ export default function Forms() {
             </div>
             <div className={styles.custom_button}>
                <Link to="/password">
-                  <button type="submit">Continuar</button>
+                  <button className={styles.custom_button_submit} type="submit">Continuar</button>
                </Link>
             </div>
-            <h2 className={styles.form_accout}>Já possuo conta</h2>
+            <Link className={styles.form_accout} to="/">
+               Já possuo conta
+            </Link>
          </form>
-
       </div>
    );
 };
