@@ -1,95 +1,143 @@
-import React from 'react';
-import styles from "./Forms.module.css"
-import { useForm, useController } from 'react-hook-form';
+import React, { useEffect, useState } from 'react';
+import styles from './Forms.module.css';
+import { useForm } from 'react-hook-form';
+import User from '../../../../../../../assets/img/User.svg';
+import Email from '../../../../../../../assets/img/Email.svg';
+import Cellphone from '../../../../../../../assets/img/Cellphone.svg';
+import { Link, useNavigate } from 'react-router-dom';
+import { yupResolver } from '@hookform/resolvers/yup';
+import * as yup from 'yup';
 import InputMask from 'react-input-mask';
-import User from "../../../../../../../assets/img/User.svg"
-import Email from "../../../../../../../assets/img/Email.svg"
-import Cellphone from "../../../../../../../assets/img/Cellphone.svg"
-import { Link } from 'react-router-dom';
+import { debounce } from 'lodash';
+
+const schema = yup.object().shape({
+  name: yup.string()
+   .matches(/^[A-Za-zÀ-ÖØ-öø-ÿ]+$/, 'O nome deve conter somente letras')
+   .min(2, 'O nome deve ter pelo menos 2 caracteres')
+   .required('Campo obrigatório, por favor preencha.'),
+  email: yup.string().email('E-mail inválido').required('Campo obrigatório'),
+  phone: yup
+    .string()
+    .required('Campo obrigatório')
+    .matches(
+      /(\([0-9]{2}\)\s?|[0-9]{2}\s?)[9]?[0-9]{4}-?[0-9]{4}/,
+      'Número de celular inválido'
+    ),
+});
 
 export default function Forms() {
-   const { control, handleSubmit } = useForm();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    setError,
+    setValue,
+  } = useForm({
+    resolver: yupResolver(schema),
+  });
 
-   const nameRef = React.useRef(null);
-   const emailRef = React.useRef(null);
-   const telefoneRef = React.useRef(null);
+  const navigate = useNavigate();
+  const [setIsValid] = useState(false);
 
-   const { field: nameField } = useController({
-      name: 'nome',
-      control,
-      rules: { required: true },
-   });
+  useEffect(() => {
+    setIsValid(Object.keys(errors).length === 0);
+  }, [errors]);
 
-   const { field: emailField } = useController({
-      name: 'email',
-      control,
-      rules: {
-         required: true,
-         pattern: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i,
-      },
-   });
+  const validateField = debounce(async (fieldName, value) => {
+    try {
+      await schema.fields[fieldName].validate(value);
+      setError(fieldName, '');
+    } catch (error) {
+      const errorMessage = error.message || 'Campo inválido';
+      setError(fieldName, {
+        type: 'manual',
+        message: errorMessage,
+      });
+    }
+  }, 300);
 
-   const { field } = useController({
-      name: 'telefone',
-      control,
-      rules: { required: true },
-   });
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setValue(name, value); // Atualiza o valor usando setValue do react-hook-form
+    validateField(name, value);
+  };
 
-   const onSubmit = (data) => {
-      console.log(data);
-   };
+  const onSubmit = (data) => {
+    console.log('Submit data:', data);
+    navigate('/password');
+  };
 
-   return (
-      <div className={styles.container}>
-         <form onSubmit={handleSubmit(onSubmit)} className={styles.form} >
-            <h1 className={styles.form_title}>Cadastro</h1>
-            <h2 className={styles.form_subtitle}>Excelentes vagas esperando por você</h2>
+  return (
+    <div className={styles.container}>
+      <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
+        <h1 className={styles.form_title}>Cadastro</h1>
+        <h2 className={styles.form_subtitle}>Excelentes vagas esperando por você</h2>
 
-            <div className={styles.content}>
-               <label>Nome<span className={styles.required_symbol}></span></label>
-               <input
-                  type="text"
-                  placeholder="Digite seu nome completo"
-                  {...nameField}
-                  required
-                  ref={nameRef}
-               />
-               <img src={User} alt="User" className={styles.img} />
-            </div>
+        <div className={styles.content}>
+          <label htmlFor="name">
+            Nome<span className={styles.required_symbol}></span>
+          </label>
+          <input
+            maxLength={50}
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Digite seu nome completo"
+            {...register('name')}
+            onChange={handleChange}
+          />
+          <img src={User} alt="User" className={styles.img} />
+          {errors.name && (
+            <span className={`${styles.error_message} ${styles.error_red}`}>{errors.name.message}</span>
+          )}
+        </div>
 
-            <div className={styles.content}>
-               <label>Seu melhor E-mail<span className={styles.required_symbol}></span></label>
-               <input
-                  type="email"
-                  placeholder="Email@exemplo.com"
-                  {...emailField}
-                  ref={emailRef}
-                  required
-               />
-               <img src={Email} alt="Email" className={styles.img} />
-            </div>
+        <div className={styles.content}>
+          <label htmlFor="email">
+            Seu melhor E-mail<span className={styles.required_symbol}></span>
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Email@exemplo.com"
+            {...register('email')}
+            onChange={handleChange}
+          />
+          <img src={Email} alt="Email" className={styles.img} />
+          {errors.email && (
+            <span className={`${styles.error_message} ${styles.error_red}`}>{errors.email.message}</span>
+          )}
+        </div>
 
-            <div className={styles.content}>
-               <label>Celular<span className={styles.required_symbol}></span></label>
-               <InputMask
+        <div className={styles.content}>
+          <label htmlFor="phone">
+            Celular<span className={styles.required_symbol}></span>
+          </label>
+          <InputMask
+            placeholder="(xx) xxxxx-xxxx"
+            mask="(99) 99999-9999"
+            id="phone"
+            name="phone"
+            {...register('phone')}
+            onChange={handleChange}
+          />
+          <img src={Cellphone} alt="Cellphone" className={styles.img} />
+          {errors.phone && (
+            <span className={`${styles.error_message} ${styles.error_red}`}>{errors.phone.message}</span>
+          )}
+        </div>
 
-                  placeholder='(xx) xxxxx-xxxx'
-                  mask="(99) 99999-9999"
-                  {...field}
-                  pattern="(\([0-9]{2}\)\s?|[0-9]{2}\s?)[9]?[0-9]{4}-?[0-9]{4}"
-                  ref={telefoneRef}
-               />
-               <img src={Cellphone} alt="Cellphone" className={styles.img} />
-            </div>
-            <div className={styles.custom_button}>
-               <Link to="/password">
-                  <button className={styles.custom_button_submit} type="submit">Continuar</button>
-               </Link>
-            </div>
-            <Link className={styles.form_accout} to="/">
-               Já possuo conta
-            </Link>
-         </form>
-      </div>
-   );
-};
+        <div className={styles.custom_button}>
+          <button className={styles.custom_button_submit} type="submit" >
+            Continuar
+          </button>
+        </div>
+
+        <Link className={styles.form_accout} to="/">
+          Já possuo conta
+        </Link>
+      </form>
+    </div>
+  );
+}

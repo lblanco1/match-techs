@@ -1,123 +1,168 @@
 .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
 }
 
 .form {
-    width: 35%;
-    /* padding: 20px; */
-    background: #0d0946;
-    border-radius: 30px;
-    padding: 75px;
+  width: 100%;
+  max-width: 500px;
+  background: #0d0946;
+  border-radius: 30px;
+  padding: 4rem;
 }
 
 .content {
-    margin: 0;
-    margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .flex {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-h3 {
-    font-family: "KoHo", sans-serif;
-    font-size: 20px;
-    color: #3a85de;
-    cursor: pointer;
+.forgot_password {
+  font-family: "KoHo", sans-serif;
+  font-size: 16px;
+  color: #3a85de;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.input_container {
+  position: relative;
 }
 
 input {
-    font-size: 1.1rem;
-    font-family: "KoHo", sans-serif;
-    width: 100%;
-    color: #ffffff;
-    border: none;
-    border-bottom: 1px solid #fa0b8c;
-    background-color: transparent;
-    padding: 0;
-    margin: 0;
-    outline: none;
+  font-size: 1.1rem;
+  font-family: "KoHo", sans-serif;
+  width: 100%;
+  color: #ffffff;
+  border: none;
+  border-bottom: 1px solid #fa0b8c;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  outline: none;
 }
 
 input::placeholder {
-    font-size: 23px;
-    font-family: "KoHo", sans-serif;
+  font-size: 16px;
+  font-family: "KoHo", sans-serif;
 }
 
 .form_title {
-    margin-bottom: 50px;
-    text-align: start;
-    font-size: 48px;
-    margin-top: 0;
-    margin-bottom: 35px;
-    color: #ffffff;
-    font-family: "KoHo", sans-serif;
-    text-align: center;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-size: 32px;
+  color: #ffffff;
+  font-family: "KoHo", sans-serif;
 }
 
 button {
-    font-family: "KoHo", sans-serif;
-    line-height: 32px;
-    background: #5a0272;
-    border-radius: 15px;
-    font-size: 25px;
-    color: #ffffff;
-    cursor: pointer;
-    width: 104px;
-    height: 44px;
-    transition-duration: 1s;
+  font-family: "KoHo", sans-serif;
+  line-height: 32px;
+  background: #5a0272;
+  border-radius: 15px;
+  font-size: 18px;
+  color: #ffffff;
+  cursor: pointer;
+  width: 100%;
+  height: 44px;
+  transition-duration: 1s;
 }
 
 .custom_button_submit:hover {
-    background-color: #a439c2;
+  background-color: #a439c2;
 }
 
 .custom_button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.conteiner {
-    white-space: nowrap;
-    display: flex;
-    justify-content: space-evenly;
-    padding: 3rem;
+.container {
+  white-space: nowrap;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
 }
 
 .form_question {
-    color: white;
-    font-family: "KoHo", sans-serif;
-    font-size: 26px;
+  color: white;
+  font-family: "KoHo", sans-serif;
+  font-size: 18px;
 }
 
 .form_start {
-    margin-left: 1rem;
-    color: #3a85de;
-    font-size: 26px;
-    font-family: "KoHo", sans-serif;
-    cursor: pointer;
-    text-decoration: none;
+  margin-top: 1rem;
+  color: #3a85de;
+  font-size: 18px;
+  font-family: "KoHo", sans-serif;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 .img {
-    margin-top: -24px;
-    width: 25px;
-    height: 20.86px;
-    display: flex;
-    float: right;
+  position: absolute;
+  top: 40%;
+  right: 10px;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 16.71px;
+}
+
+.img_eye {
+  cursor: pointer;
+}
+
+.error_red {
+  color: red;
+  display: flex;
 }
 
 .required_symbol::before {
-    content: "*";
-    color: red;
-    font-size: 20px;
-    position: relative;
-    top: -7px;
-    margin-left: 9px;
+  content: "*";
+  color: red;
+  font-size: 16px;
+  position: relative;
+  top: -7px;
+  margin-left: 9px;
+}
+
+@media screen and (max-width: 600px) {
+  .form {
+    width: 85%;
+    padding: 1.8rem;
+  }
+
+  .form_title {
+    font-size: 22px;
+  }
+
+  .forgot_password {
+    font-size: 12px;
+  }
+
+  input::placeholder {
+    font-size: 12px;
+  }
+
+  /* .label {
+        font-size: 14px !important;
+      }
+   */
+  button {
+    font-size: 14px;
+  }
+
+  .form_question,
+  .form_start {
+    font-size: 14px;
+  }
 }
