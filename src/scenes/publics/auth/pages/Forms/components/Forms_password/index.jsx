@@ -74,18 +74,19 @@ export default function FormsPassword() {
       >
          {({ handleChange, values }) => (
             <div className={styles.container}>
-               <form onSubmit={handleSubmit(onSubmit)} className={styles.form} >
+               <form onSubmit={handleSubmit(onSubmit)} className={styles.form}  >
                   <h1 className={styles.form_title}>Cadastro</h1>
                   <h2 className={styles.form_subtitle}>Excelentes vagas esperando por você</h2>
                   <h2 className={styles.form_security}>Para sua segurança</h2>
 
-                  <label htmlFor="password">Crie uma senha<span className={styles.required_symbol}></span></label>
+                  <label className={styles.rename_label} htmlFor="password">Crie uma senha<span className={styles.required_symbol} ></span></label>
                   <div className={styles.content}>
                      {/* <input
                      type={showPassword ? 'text' : 'password'}
                   /> */}
                      
                      <Field
+                        className={styles.rename_input}
                         type={showPassword ? 'text' : 'password'}
                         id="password"
                         name="password"
@@ -100,12 +101,13 @@ export default function FormsPassword() {
 
                            <div className={styles.mensage_error}><ErrorMessage name="password" component="div" /></div>
 
-                  <label htmlFor="confirmPassword">Confirme sua senha<span className={styles.required_symbol}></span></label>
+                  <label className={styles.rename_label} htmlFor="confirmPassword">Confirme sua senha<span className={styles.required_symbol} ></span></label>
                   <div className={styles.content}>
                      {/* <input
                         type={showPassword ? 'text' : 'password'}
                      /> */}
                      <Field
+                        className={styles.rename_input}
                         type={showPassword ? 'text' : 'password'}
                         id="confirmPassword"
                         name="confirmPassword"
