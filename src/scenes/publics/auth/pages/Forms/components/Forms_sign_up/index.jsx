@@ -74,11 +74,12 @@ export default function Forms() {
         <h2 className={styles.form_subtitle}>Excelentes vagas esperando por você</h2>
 
         <div className={styles.content}>
-          <label htmlFor="name">
+          <label className={styles.rename_label} htmlFor="name">
             Nome<span className={styles.required_symbol}></span>
           </label>
           <input
-            autoComplete= 'none'
+            className={styles.rename_input}
+            autoComplete='none'
             maxLength={50}
             type="text"
             id="name"
@@ -94,11 +95,12 @@ export default function Forms() {
         </div>
 
         <div className={styles.content}>
-          <label htmlFor="email">
+          <label className={styles.rename_label} htmlFor="email">
             Seu melhor E-mail<span className={styles.required_symbol}></span>
           </label>
           <input
-            autoComplete= 'none'
+            className={styles.rename_input}
+            autoComplete='none'
             type="email"
             id="email"
             name="email"
@@ -113,11 +115,12 @@ export default function Forms() {
         </div>
 
         <div className={styles.content}>
-          <label htmlFor="phone">
+          <label className={styles.rename_label} htmlFor="phone">
             Celular<span className={styles.required_symbol}></span>
           </label>
           <InputMask
-            autoComplete= 'none'
+            className={styles.rename_input}
+            autoComplete='none'
             placeholder="(xx) xxxxx-xxxx"
             mask="(99) 99999-9999"
             id="phone"

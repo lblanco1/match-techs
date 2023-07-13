@@ -21,10 +21,6 @@
     position: relative; /* posicionar de forma relativa */
 }
 
-.matchtechs {
-    display: flex;
-    margin-top: 45px;
-}
 .content {
     color: #ffffff;
     display: flex;
@@ -48,7 +44,9 @@
     font-size: 30px;
 }
 
-img {
+.matchtechs {
+    display: flex;
+    margin-top: 45px;
     width: 8rem;
     height: 5.5rem;
     margin-left: 2rem;
@@ -66,7 +64,7 @@ img {
         font-size: 18px;
     }
 
-    img {
+    .matchtechs {
         display: none !important;
     }
 

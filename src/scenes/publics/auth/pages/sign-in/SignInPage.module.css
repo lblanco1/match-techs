@@ -35,8 +35,8 @@
   position: relative;
 }
 
-input {
-  font-size: 1.1rem;
+.rename_input {
+  font-size: 20px;
   font-family: "KoHo", sans-serif;
   width: 100%;
   color: #ffffff;
@@ -48,9 +48,9 @@ input {
   outline: none;
 }
 
-input::placeholder {
-  font-size: 16px;
+.rename_input::placeholder {
   font-family: "KoHo", sans-serif;
+  font-size: 18px;
 }
 
 .form_title {
@@ -117,6 +117,14 @@ button {
   height: 16.71px;
 }
 
+.rename_label {
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 34px;
+  color: #ffffff;
+  font-family: "KoHo", sans-serif;
+}
+
 .img_eye {
   cursor: pointer;
 }
@@ -149,14 +157,18 @@ button {
     font-size: 12px;
   }
 
-  input::placeholder {
-    font-size: 12px;
+  .rename_label {
+    font-size: 20px;
   }
 
-  /* .label {
-        font-size: 14px !important;
-      }
-   */
+  .rename_input {
+    font-size: 16px;
+  }
+
+  .rename_input::placeholder {
+    font-size: 16px;
+  }
+
   button {
     font-size: 14px;
   }

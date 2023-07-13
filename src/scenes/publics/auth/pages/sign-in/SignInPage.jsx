@@ -84,9 +84,10 @@ export default function SignInPage() {
         <h1 className={styles.form_title}>LOGIN DO CLIENTE</h1>
 
         <div className={styles.content}>
-          <label htmlFor="email">Digite seu usuário<span className={styles.required_symbol}></span></label>
+          <label className={styles.rename_label} htmlFor="email">Digite seu usuário<span className={styles.required_symbol}></span></label>
           <div className={styles.input_container}>
             <input
+              className={styles.rename_input}
               type="email"
               id='email'
               placeholder="Ex: email@example.com"
@@ -101,13 +102,14 @@ export default function SignInPage() {
         </div>
 
         <div className={styles.flex}>
-          <label htmlFor="password">Senha<span className={styles.required_symbol}></span></label>
+          <label className={styles.rename_label} htmlFor="password">Senha<span className={styles.required_symbol}></span></label>
           <Link to="/" className={styles.forgot_password}>Esqueceu sua senha?</Link>
         </div>
 
         <div className={styles.content}>
           <div className={styles.input_container}>
             <input
+              className={styles.rename_input}
               type={showPassword ? 'text' : 'password'}
               id='password'
               placeholder='Insira aqui a sua senha'

@@ -15,37 +15,11 @@
 
 .content {
     margin: 20px 0;
-    margin-bottom: 3rem;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 34px;
-    color: #ffffff;
-    font-family: "KoHo", sans-serif;
-}
-
-input {
-    font-size: 1.1rem;
-    font-family: "KoHo", sans-serif;
-    width: 100%;
-    color: #ffffff;
-    border: none;
-    border-bottom: 1px solid #fa0b8c;
-    background-color: transparent;
-    padding: 0;
-    margin: 0;
-    outline: none;
+    margin-bottom: 2rem;
 }
 
 .form_title {
-    text-align: start;
-    font-size: 40px;
-    margin-top: 0;
+    font-size: 32px;
     margin-bottom: 35px;
     color: #ffffff;
     font-family: "KoHo", sans-serif;
@@ -53,7 +27,7 @@ input {
 
 .form_subtitle {
     text-align: center;
-    font-size: 23px;
+    font-size: 24px;
     color: #ffffff;
     font-family: "KoHo", sans-serif;
 }
@@ -92,13 +66,34 @@ button {
     text-decoration: none;
 }
 
-input::placeholder {
-    font-size: 23px;
+.rename_input {
+    font-size: 20px;
+    font-family: "KoHo", sans-serif;
+    width: 100%;
+    color: #ffffff;
+    border: none;
+    border-bottom: 1px solid #fa0b8c;
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    outline: none;
+}
+
+.rename_input::placeholder {
+    font-family: "KoHo", sans-serif;
+    font-size: 18px;
+}
+
+.rename_label {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 34px;
+    color: #ffffff;
     font-family: "KoHo", sans-serif;
 }
 
 .img {
-    margin-top: -60px;
+    margin-top: -30px;
     width: 25px;
     display: flex;
     float: right;
@@ -115,4 +110,40 @@ input::placeholder {
 
 .error_red {
     color: red;
+}
+
+@media screen and (max-width: 700px) {
+    .form {
+        width: 85%;
+        padding: 1.8rem;
+    }
+
+    .form_title {
+        font-size: 22px;
+    }
+
+    .forgot_password {
+        font-size: 12px;
+    }
+
+    .rename_label {
+        font-size: 20px;
+    }
+
+    .rename_input {
+        font-size: 16px;
+    }
+
+    .rename_input::placeholder {
+        font-size: 16px;
+    }
+
+    button {
+        font-size: 14px;
+    }
+
+    .form_question,
+    .form_start {
+        font-size: 14px;
+    }
 }
