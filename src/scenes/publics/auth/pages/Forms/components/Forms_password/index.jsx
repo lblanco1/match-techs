@@ -84,6 +84,7 @@ export default function FormsPassword() {
                      {/* <input
                      type={showPassword ? 'text' : 'password'}
                   /> */}
+                     
                      <Field
                         type={showPassword ? 'text' : 'password'}
                         id="password"
@@ -95,8 +96,9 @@ export default function FormsPassword() {
                         value={values.password}
                      />
                      <img src={showPassword ? Eye : Nosee} className={styles.img} onClick={togglePasswordVisibility} />
-                     <ErrorMessage name="password" component="div" />
                   </div>
+
+                           <div className={styles.mensage_error}><ErrorMessage name="password" component="div" /></div>
 
                   <label htmlFor="confirmPassword">Confirme sua senha<span className={styles.required_symbol}></span></label>
                   <div className={styles.content}>
@@ -111,9 +113,9 @@ export default function FormsPassword() {
                         value={values.confirmPassword}
                      />
                      <img src={showPassword ? Eye : Nosee} className={styles.img} onClick={togglePasswordVisibility} />
-                     <ErrorMessage name="confirmPassword" component="div" />
                   </div>
 
+                     <div className={styles.mensage_error}><ErrorMessage name="confirmPassword" component="div" /></div>
 
                   <div className={styles.list}>
 

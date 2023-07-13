@@ -37,11 +37,11 @@ export default function Forms() {
   });
 
   const navigate = useNavigate();
-  const [setIsValid] = useState(false);
+  // const [setIsValid] = useState(false);
 
-  useEffect(() => {
-    setIsValid(Object.keys(errors).length === 0);
-  }, [errors]);
+  // useEffect(() => {
+  //   setIsValid(Object.keys(errors).length === 0);
+  // }, [errors]);
 
   const validateField = debounce(async (fieldName, value) => {
     try {
@@ -78,6 +78,7 @@ export default function Forms() {
             Nome<span className={styles.required_symbol}></span>
           </label>
           <input
+            autoComplete= 'none'
             maxLength={50}
             type="text"
             id="name"
@@ -97,6 +98,7 @@ export default function Forms() {
             Seu melhor E-mail<span className={styles.required_symbol}></span>
           </label>
           <input
+            autoComplete= 'none'
             type="email"
             id="email"
             name="email"
@@ -115,6 +117,7 @@ export default function Forms() {
             Celular<span className={styles.required_symbol}></span>
           </label>
           <InputMask
+            autoComplete= 'none'
             placeholder="(xx) xxxxx-xxxx"
             mask="(99) 99999-9999"
             id="phone"
