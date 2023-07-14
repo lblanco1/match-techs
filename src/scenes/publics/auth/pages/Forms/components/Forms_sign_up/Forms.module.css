@@ -6,11 +6,13 @@
 }
 
 .form {
-    width: 40%;
+    width: 100%;
     padding: 20px;
     background: #0d0946;
     border-radius: 30px;
-    padding: 75px;
+    padding-left: 55px;
+    padding-right: 55px;
+    max-width: 500px;
 }
 
 .content {
@@ -58,7 +60,7 @@ button {
     color: #3a85de;
     display: grid;
     place-items: center;
-    margin-top: 4rem;
+    margin-top: 3rem;
     font-size: 23px;
     font-family: "KoHo", sans-serif;
     font-weight: 700;
@@ -122,6 +124,10 @@ button {
         font-size: 22px;
     }
 
+    .form_subtitle {
+        font-size: 20px;
+    }
+
     .forgot_password {
         font-size: 12px;
     }
@@ -139,9 +145,20 @@ button {
     }
 
     button {
+        width: 130px;
         font-size: 14px;
     }
 
+    .form_accout {
+        margin-top: 2rem;
+        font-size: 20px;
+    }
+
+    .img {
+        margin-top: -30px;
+        width: 20px;
+    }
+    
     .form_question,
     .form_start {
         font-size: 14px;

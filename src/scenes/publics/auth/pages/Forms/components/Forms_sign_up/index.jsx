@@ -12,9 +12,9 @@ import { debounce } from 'lodash';
 
 const schema = yup.object().shape({
   name: yup.string()
-   .matches(/^[A-Za-zÀ-ÖØ-öø-ÿ]+$/, 'O nome deve conter somente letras')
-   .min(2, 'O nome deve ter pelo menos 2 caracteres')
-   .required('Campo obrigatório, por favor preencha.'),
+    .matches(/^[A-Za-zÀ-ÖØ-öø-ÿ]+$/, 'O nome deve conter somente letras')
+    .min(2, 'O nome deve ter pelo menos 2 caracteres')
+    .required('Campo obrigatório, por favor preencha.'),
   email: yup.string().email('E-mail inválido').required('Campo obrigatório'),
   phone: yup
     .string()

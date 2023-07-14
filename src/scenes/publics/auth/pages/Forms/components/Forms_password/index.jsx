@@ -116,11 +116,9 @@ export default function FormsPassword() {
                      />
                      <img src={showPassword ? Eye : Nosee} className={styles.img} onClick={togglePasswordVisibility} />
                   </div>
-
-                     <div className={styles.mensage_error}><ErrorMessage name="confirmPassword" component="div" /></div>
+                  <div className={styles.mensage_error}><ErrorMessage name="confirmPassword" component="div" /></div>
 
                   <div className={styles.list}>
-
                      <ul>
                         <li className={requirements.length ? styles.green : styles.red}>Mínimo de 8 caracteres</li>
                         <li className={requirements.specialChar ? styles.green : styles.red}>Mínimo de um caracter especial</li>
@@ -128,7 +126,6 @@ export default function FormsPassword() {
                         <li className={requirements.uppercase ? styles.green : styles.red}>Ter letras MAIÚSCULAS</li>
                         <li className={requirements.lowercase ? styles.green : styles.red}>Ter letras minúsculas</li>
                      </ul>
-
                   </div>
 
                   <div className={styles.conteiner}>
