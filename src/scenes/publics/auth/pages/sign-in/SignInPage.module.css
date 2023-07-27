@@ -10,7 +10,7 @@
   max-width: 500px;
   background: #0d0946;
   border-radius: 30px;
-  padding: 2rem 3rem 2rem 3rem;
+  padding: 2rem 3rem 4rem 3rem;
 }
 
 .content {
@@ -178,3 +178,5 @@ button {
     font-size: 14px;
   }
 }
+
+
