@@ -103,7 +103,7 @@ export default function SignInPage() {
 
         <div className={styles.flex}>
           <label className={styles.rename_label} htmlFor="password">Senha<span className={styles.required_symbol}></span></label>
-          <Link to="/" className={styles.forgot_password}>Esqueceu sua senha?</Link>
+          <Link to="/reset_password" className={styles.forgot_password}>Esqueceu sua senha?</Link>
         </div>
 
         <div className={styles.content}>
@@ -116,7 +116,7 @@ export default function SignInPage() {
               {...register('password')}
               onChange={handleChange}
             />
-            <img src={showPassword ? Eye : Nosee} className={`${styles.img} ${styles.img_eye}`} onClick={togglePasswordVisibility} />
+            <img src={showPassword ? Eye : Nosee } alt={'olho'} className={`${styles.img} ${styles.img_eye}`} onClick={togglePasswordVisibility} />
             {errors.password && (
             <span className={`${styles.error_message} ${styles.error_red}`}>{errors.password.message}</span>
           )}
