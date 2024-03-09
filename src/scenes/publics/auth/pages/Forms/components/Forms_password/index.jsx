@@ -22,6 +22,7 @@ const schema = yup.object().shape({
       .oneOf([yup.ref('password')], 'As senhas não coincidem'),
 });
 
+
 export default function FormsPassword() {
    const { handleSubmit } = useForm();
 
@@ -136,9 +137,11 @@ export default function FormsPassword() {
                      </div>
 
                      <div>
+                        <Link to="/">
                         <button className={styles.custom_button_submit} type="submit">
                            Concluir
                         </button>
+                        </Link>
                      </div>
                   </div>
                   <h2 className={styles.form_accout}>Já possuo conta</h2>
